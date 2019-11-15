@@ -1,0 +1,30 @@
+#artisan-listings .ratings i{
+  color:#F19C4F;
+}
+
+.for-artisan .content h2{
+  margin-bottom:0.2rem;
+}
+
+a.artisan-card-name{
+  color:#4a4a4a;
+  margin-bottom:0.3rem;
+  display: inline-block;
+  font-family: $font-family-headings;
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 1.12rem;
+}
+.artisan-card  .buttons{
+  margin-top:10px;
+}
+
+.artisan-card .level-item a:hover, a.artisan-card-name:hover{
+  color:$theme-color !important;
+}
+
+.artisan-card .level-item .icon{
+  color:$theme-color !important;
+}
+
+

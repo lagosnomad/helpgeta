@@ -1,0 +1,42 @@
+
+// Fonts
+/*@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");*/
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600');
+/*@import url('https://fonts.googleapis.com/css?family=Roboto:400,500');
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600');*/
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+@import "~bulma/sass/utilities/initial-variables";
+@import "~bulma/sass/utilities/functions";
+
+@import "variables";
+
+// Bulma
+@import "~bulma/bulma";
+@import "~buefy/src/scss/buefy";
+@import '~vue-datetime/dist/vue-datetime.css';
+@import '~swiper/dist/css/swiper.css';
+
+@import '~bulma-extensions/bulma-badge/dist/bulma-badge';
+@import '~bulma-divider';
+@import '~bulma-checkradio';
+@import '~bulma-extensions/bulma-switch/dist/bulma-switch';
+
+@import "general";
+@import "helpers";
+@import "banner";
+@import "how-it-works";
+@import "call-out";
+@import "category-listings";
+@import "testimonials";
+@import "login";
+@import "account";
+@import "artisan-listings";
+@import "ratings";
+@import "artisan-single";
+@import "carousel";
+
+@import "spacings";
+
+

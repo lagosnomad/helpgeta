@@ -1,0 +1,49 @@
+.work-processes {
+    margin-top: 1.5rem;
+}
+
+.work-process {
+    margin-bottom: 30px;
+}
+
+.work-process-icon {
+    width: 50px;
+    height: 50px;
+    float: left;
+}
+
+.work-process-icon span {
+    font-size: 2.5em;
+    color: #1b8aec;
+}
+
+.work-process-caption {
+    margin-left: 55px;
+}
+
+.work-process-caption h4 {
+    font-weight: 500;
+    margin-bottom: 4px;
+    font-size: 16px;
+    color: #55646f;
+    position: relative;
+    padding-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.work-process-caption h4:before {
+    content: "";
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 80px;
+    display: block;
+    position: absolute;
+    background: #1b8aec;
+}
+
+.work-process-caption p {
+    font-size: 16px;
+    line-height: 1.8;
+    font-weight: 400;
+}

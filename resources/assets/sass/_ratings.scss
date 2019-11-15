@@ -1,0 +1,28 @@
+.ratings {
+  i{
+    color:#F19C4F;
+  }
+  .average-rating{
+    background:$theme-color;
+    padding: 0 0.3125rem;
+    border-radius: 0.3125rem;
+    color: #fff;
+    text-align: center;
+  }
+}
+
+.rating-star-progress{
+  margin-top:1rem;
+  margin-bottom:1rem;
+  .star-progress{
+
+    span{
+      display: inline-block;
+    }
+
+    .progress{
+      display: inline-block;
+      width:50%;
+    }
+  }
+}

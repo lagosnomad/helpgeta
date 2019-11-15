@@ -1,0 +1,30 @@
+
+.artisan-single-wrapper{
+  .artisan-detail-box{
+    .artisan-detail-box-item{
+      margin-bottom: 1.5rem;
+      .title{
+        margin-bottom: 0.4rem;
+        font-size:$size-6;
+        font-weight:600;
+        text-transform: uppercase;
+        .icon{
+          display:inline-block;
+          vertical-align:middle;
+          color:$theme-color;
+          i{
+            font-size:$size-5;
+          }
+        }
+        span:not(.icon){
+          display:inline-block;
+          vertical-align:middle;
+          margin-left: 0.9rem;
+        }
+      }
+      .content{
+        margin-left: 2.5rem;
+      }
+    }
+  }
+}

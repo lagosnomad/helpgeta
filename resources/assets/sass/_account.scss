@@ -1,0 +1,45 @@
+.main-heading.account-heading{
+    text-align: left;
+}
+
+.main-heading.account-heading h3{
+    font-weight: 500 !important;
+    margin-bottom: 1.5rem;
+}
+
+.main-heading.account-heading h3 span{
+    color: $theme-color;
+}
+
+.panel-body{
+    border-bottom: 1px solid #dbdbdb;
+    border-left: 1px solid #dbdbdb;
+    border-right: 1px solid #dbdbdb;
+    padding: 2rem;
+}
+
+.account-page {
+    nav.tabs {
+        margin-bottom:2rem;
+    }
+    .page-heading{
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 2rem;
+    }
+    .notification{
+        margin-bottom:2rem;
+    }
+}
+
+/*a.button.is-account-action i{
+    font-size: 1.5em;
+    color: #1b8aec;
+    margin-bottom: 15px;
+    width: 60px;
+    height: 60px;
+    transition: ease-in-out .4s;
+    background: rgba(27, 138, 236, .08);
+    line-height: 50px;
+    border-radius: 50%;
+}*/

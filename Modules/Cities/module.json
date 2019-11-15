@@ -1,0 +1,17 @@
+{
+    "name": "Cities",
+    "alias": "cities",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Cities\\Providers\\CitiesServiceProvider",
+        "Modules\\Cities\\Providers\\RouteServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}

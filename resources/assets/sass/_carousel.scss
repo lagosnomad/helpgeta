@@ -1,0 +1,18 @@
+.swiper-container {
+    padding: 40px 5px 5px;
+}
+
+.swiper-pagination {
+    z-index: 0;
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets {
+    top: -10px;
+    left: 0;
+    width: 100%;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    background: $theme-color;
+}
