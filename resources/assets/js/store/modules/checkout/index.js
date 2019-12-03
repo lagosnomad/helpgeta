@@ -1,20 +1,44 @@
 const state = {
     selectedCategoryItems: [],
+    selectedCategory : {},
     requestDates: [],
-    category: null,
-    artisan: null
-    /*requestStartDate: '',
-    requestStartTime: '',
-    requestEndDate: '',
-    requestEndTime: ''*/
+    refCategory: null,
+    artisan: null,
+    user: {},
+    userAddress: '',
+    userPhone: '',
+    userLandmark: '',
+    userStateId: null,
+    userCityId: null,
 }
 
 const mutations = {
     UPDATE_CATEGORY (state, payload){
-        state.category = payload;
+        state.refCategory = payload;
+    },
+    UPDATE_SELECTED_CATEGORY (state, payload){
+        state.selectedCategory = payload;
     },
     UPDATE_ARTISAN (state, payload){
         state.artisan = payload;
+    },
+    UPDATE_USER (state, payload){
+        state.user = payload;
+    },
+    UPDATE_USER_ADDRESS (state, payload){
+        state.userAddress = payload;
+    },
+    UPDATE_USER_PHONE (state, payload){
+        state.userPhone = payload;
+    },
+    UPDATE_USER_LANDMARK (state, payload){
+        state.userLandmark = payload;
+    },
+    UPDATE_USER_STATE_ID (state, payload){
+        state.userStateId = payload;
+    },
+    UPDATE_USER_CITY_ID (state, payload){
+        state.userCityId = payload;
     },
     ADD_CATEGORY_ITEM (state, payload) {
         state.selectedCategoryItems.push(payload);
@@ -35,7 +59,7 @@ const mutations = {
     UPDATE_REQUEST_DATES (state, payload) {
         let requestDateInputs = payload;
         let filteredArray = requestDateInputs.filter(el => {
-            if(state.category.is_hourly_based)
+            if(state.selectedCategory.is_hourly_based)
                 return el.date && el.hours;
             else
                 return el.date;
@@ -59,15 +83,32 @@ const actions = {
 const getters = {
     selectedCategoryItems: state => state.selectedCategoryItems,
     artisan: state => state.artisan,
-    category: state => state.category,
+    user: state => state.user,
+    userAddress: state => state.userAddress,
+    userPhone: state => state.userPhone,
+    userLandmark: state => state.userLandmark,
+    userStateId: state => state.userStateId,
+    userCityId: state => state.userCityId,
+    selectedCategory: state => state.selectedCategory,
+    refCategory: state => state.refCategory,
     requestDates: state => state.requestDates,
     checkoutTotal: (state,getters) => {
-        return state.selectedCategoryItems.reduce((acc, categoryItem) => {
+        /*return state.selectedCategoryItems.reduce((acc, categoryItem) => {
             if(categoryItem.is_hourly_based)
                 return (categoryItem.amount * (getters.checkoutTotalHours * getters.checkoutTotalDays)) + acc;
             else
                 return (categoryItem.amount * getters.checkoutTotalDays) + acc;
-        }, 0).toFixed(2);
+        }, 0).toFixed(2);*/
+        let categoryItem = getters.selectedCategory;
+        let amount = categoryItem.pivot.amount;
+        let total;
+
+        if(categoryItem.is_hourly_based)
+            total = amount * (getters.checkoutTotalHours * getters.checkoutTotalDays);
+        else
+            total = amount * getters.checkoutTotalDays;
+
+        return total.toFixed(2);
     },
     checkoutTotalHours: state => {
         if(state.requestDates.length)

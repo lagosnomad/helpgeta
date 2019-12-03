@@ -9,6 +9,7 @@ class FormRequest extends AbstractFormRequest {
     {
         $rules = [
             'email'=>'required|email|unique:users',
+            'username'=>'required|unique:users|alpha_dash',
             'password'=>'required',
             'confirm_password'=>'required|same:password',
         ];

@@ -3,7 +3,7 @@
 		<a :href="category.url" @click.prevent="showModal">
 			<div class="card-content">
 				<figure class="category-icon">
-					<img :src="category.image" alt="">
+					<img :src="category.image" :alt="category.category">
 				</figure>
 				<div class="category-title">
 					<h4 class="title is-6">{{category.category}}</h4>
@@ -25,14 +25,18 @@
         },
         methods: {
             showModal(){
-                this.$modal.open({
-                    parent: this,
-                    component: CategoriesListItemModal,
-                    hasModalCard: true,
-                    props:{
-                        category: this.category,
-                    }
-                })
+                if(!this.category.items.length){
+                    window.location = this.category.url;
+                }else{
+                    this.$modal.open({
+                        parent: this,
+                        component: CategoriesListItemModal,
+                        hasModalCard: true,
+                        props:{
+                            category: this.category,
+                        }
+                    })
+                }
             }
         }
     }

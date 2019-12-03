@@ -78,7 +78,7 @@ class FileObserver
                 if ($model->$fieldname == 'delete') {
                     $model->$fieldname = null;
                 } else {
-                    $model->$fieldname = $model->getOriginal($fieldname);
+                   // $model->$fieldname = $model->getOriginal($fieldname);
                 }
             }
         }

@@ -1,6 +1,5 @@
 <template>
-
-		<div class="field">
+	<div class="field">
 			<input @change="$emit('change', item, $event)"
 			       class="is-checkradio"
 			       :id="uniqueId"
@@ -9,7 +8,6 @@
 			       :checked="checked"
 			       name="categoryItems">
 			<label :for="uniqueId">{{item.category}} - <strong>{{item.amount | currency }}</strong></label>
-
 	</div>
 </template>
 

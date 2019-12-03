@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Factory;
 use Modules\Artisans\Entities\Artisan;
 use Modules\Artisans\Observers\SlugObserver;
 use Modules\Artisans\Repositories\EloquentArtisan;
+use Modules\Core\Observers\FileObserver;
 
 class ArtisansServiceProvider extends ServiceProvider
 {
@@ -37,7 +38,7 @@ class ArtisansServiceProvider extends ServiceProvider
             'Modules\Artisans\Facades\Facade'
         );
 
-        Artisan::observe(SlugObserver::class);
+        //Artisan::observe(FileObserver::class);
     }
 
     /**

@@ -1,10 +1,13 @@
 <?php
+use Illuminate\Support\Facades\Route;
 
-use Illuminate\Routing\Router;
-
-/** @var Router $router */
-/*$router->get('/', [
-    'uses' => 'PublicController@homepage',
-    'as' => 'homepage',
-    'middleware' => config('asgard.page.config.middleware'),
-]);*/
+Route::group(['prefix' => 'account/requests'], function () {
+    Route::get('/', [
+        'as' => 'account.orders.index',
+        'uses' => 'OrdersAccountController@index'
+    ]);
+    Route::get('/{order_number}', [
+        'as' => 'account.orders.show',
+        'uses' => 'OrdersAccountController@show'
+    ]);
+});

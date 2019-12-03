@@ -32,8 +32,22 @@ class UsersAccountController extends BasePublicController
             'model' => $model
         ]);
 
+        $categories_ids = json_encode([]);
+        $categories_ids_with_amounts = json_encode([]);
+        $base_category_id = 0;
+        if($model->hasRoleName('Artisan') && isset($model->artisan))
+        {
+            if ($model->artisan->categories->count())
+            {
+                $categories = $model->artisan->categories;
+                $categories_ids = $categories->pluck('id');
+                $categories_ids_with_amounts = $categories->pluck('pivot.amount', 'id');
+                $base_category_id = $categories->first()->id;
+            }
+        }
+
         return view('users::public.index')
-            ->with(compact('form','model'));
+            ->with(compact('form','model','categories_ids','categories_ids_with_amounts','base_category_id'));
     }
 
 
@@ -77,7 +91,7 @@ class UsersAccountController extends BasePublicController
     public function update(ProfileUpdateFormRequest $request)
     {
         $data = $request->all();
-
+        //dd($data);
         if($request->hasFile('avatar')){
             $file = FileUpload::handle($request->file('avatar'), 'uploads/users');
             $data['avatar'] = $file['filename'];
@@ -90,13 +104,24 @@ class UsersAccountController extends BasePublicController
 
             $artisan_data = $data['artisan'] + ['user_id'=>$user->id];
 
+            if($request->hasFile('artisan.identification_file'))
+            {
+                $file = FileUpload::handle($request->file('artisan.identification_file'), 'uploads/identifications');
+                $artisan_data['identification_file'] = $file['filename'];
+            }
+
             if($user->has('artisan')->count()){
                  $artisan = \Artisans::update($artisan_data + ['id'=>$user->artisan->id]);
             }else{
                $artisan =  \Artisans::create($artisan_data);
             }
-            if(isset($artisan_data['categories'])){
-                $artisan->categories()->sync($artisan_data['categories']);
+            if(isset($data['add_category_item'])){
+                $category_items = $data['add_category_item'];
+                $new_items_array = [];
+                foreach($category_items as $id => $value){
+                    $new_items_array[$id] = ['amount' => $value];
+                }
+                $artisan->categories()->sync($new_items_array);
             }
 
         }

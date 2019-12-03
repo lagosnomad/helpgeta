@@ -10,9 +10,9 @@ class CitiesApiController extends BaseApiController {
         parent::__construct($repository);
     }
 
-    public function index($id)
+    public function index($state_id)
     {
-       $model = $this->repository->byId($id);
+       $model = $this->repository->allBy('state_id',$state_id);
 
        return response()->json($model, 200);
     }

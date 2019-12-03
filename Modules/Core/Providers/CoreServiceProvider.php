@@ -6,6 +6,7 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
 use Modules\Core\Services\MyApp;
+use Modules\Core\Services\SMS\Twilio;
 use Modules\Core\Services\Upload\FileUpload;
 
 class CoreServiceProvider extends ServiceProvider
@@ -32,6 +33,10 @@ class CoreServiceProvider extends ServiceProvider
 
         $this->app->singleton('myapp', function () {
             return new MyApp;
+        });
+
+        $this->app->bind('Modules\Core\Services\SMS\SMSInterface', function () {
+            return new Twilio();
         });
     }
 

@@ -1,0 +1,25 @@
+{
+    "name": "adedolapoo/reports",
+    "description": "",
+    "authors": [
+        {
+            "name": "Adedolapo Oduguwa",
+            "email": "adedolapoo@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Reports\\Providers\\ReportsServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Reports\\": ""
+        }
+    }
+}

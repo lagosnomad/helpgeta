@@ -11,6 +11,7 @@ use Modules\Core\Traits\RedirectingTrait;
 use Modules\Users\Http\Requests\ChangePasswordFormRequest;
 use Modules\Users\Http\Requests\FormRequest;
 use Modules\Users\Http\Requests\LoginRequest;
+use Modules\Users\Http\Requests\RegisterFormRequest;
 use Modules\Users\Http\Requests\ResetRequest;
 use Modules\Users\Repositories\AuthenticationInterface;
 use Modules\Users\Repositories\UserInterface;
@@ -40,7 +41,7 @@ class AuthController extends Controller {
     public function postLogin(LoginRequest $request)
     {
         $credentials = [
-            'email'    => $request->email,
+            'login'    => $request->email,
             'password' => $request->password,
         ];
         $remember = (bool) $request->get('remember_me', false);
@@ -56,7 +57,7 @@ class AuthController extends Controller {
         return $this->redirectBack(array('message' => $error));
     }
 
-    public function postRegister(FormRequest $request)
+    public function postRegister(RegisterFormRequest $request)
     {
         app(UserRegistration::class)->register($request->all());
 
@@ -113,7 +114,7 @@ class AuthController extends Controller {
         {
             case 'artisan':
             case 'user':
-                $route = route('account.dashboard');
+                $route = route('account.orders.index');
                 return redirect()->intended($route)
                     ->withSuccess($message);
                 break;

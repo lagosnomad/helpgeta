@@ -18,7 +18,7 @@ class AddToMenuObserver {
     public function created(Page $model)
     {
         $menus = Request::input('menus');
-        if (!is_null($menus))
+        if (count($menus))
         {
             foreach ($menus as $menu_id)
             {

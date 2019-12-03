@@ -1,0 +1,21 @@
+{
+    "name": "Payments",
+    "alias": "payments",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Payments\\Providers\\RouteServiceProvider",
+        "Modules\\Payments\\Providers\\PaymentsServiceProvider",
+        "Unicodeveloper\\Paystack\\PaystackServiceProvider"
+    ],
+    "aliases": {
+        "Paystack" : "Unicodeveloper\\Paystack\\Facades\\Paystack"
+    },
+    "files": [
+        "start.php",
+        "helpers.php"
+    ],
+    "requires": []
+}

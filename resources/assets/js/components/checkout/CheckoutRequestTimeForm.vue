@@ -1,8 +1,12 @@
 <template>
 	<div>
 		<b-field grouped v-for="(item,key) in items" :key="key">
-			<div class="field">
-				<label class="label">Date</label>
+			<div class="field has-addons">
+				<p class="control">
+					<a class="button is-static">
+						Date
+					</a>
+				</p>
 				<div class="control has-icons-left">
 					<datetime
 							type="datetime"
@@ -18,7 +22,12 @@
 				</div>
 			</div>
 
-			<b-field label="No. of Hours" v-if="category.is_hourly_based">
+			<div class="field has-addons" v-if="category.is_hourly_based">
+				<p class="control">
+					<a class="button is-static">
+						Hours
+					</a>
+				</p>
 				<b-input
 						v-model="item.hours"
 						placeholder="Enter no. of hours"
@@ -28,9 +37,8 @@
 						value="" expanded>
 				</b-input>
 
-			</b-field>
+			</div>
 			<div class="field" v-if='key != 0'>
-				<label class="label">&nbsp;</label>
 				<p class="control">
 					<a href="#" class="has-text-danger" @click.prevent="removeItem(key)"><span class="icon"><i class="fa fa-trash"></i></span></a>
 				</p>
@@ -82,3 +90,12 @@
         }
     }
 </script>
+
+<style lang="scss" scoped>
+	.field.is-grouped{
+		margin-bottom: 1rem;
+		.field{
+			margin-bottom: 0 !important;
+		}
+	}
+</style>

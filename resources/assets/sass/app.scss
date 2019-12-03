@@ -1,10 +1,5 @@
-
 // Fonts
-/*@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");*/
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600');
-/*@import url('https://fonts.googleapis.com/css?family=Roboto:400,500');
-@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500');
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600');*/
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
 @import "~bulma/sass/utilities/initial-variables";
@@ -22,6 +17,7 @@
 @import '~bulma-divider';
 @import '~bulma-checkradio';
 @import '~bulma-extensions/bulma-switch/dist/bulma-switch';
+@import "~bulma-utilities/sass/bulma-utilities";
 
 @import "general";
 @import "helpers";
@@ -38,5 +34,6 @@
 @import "carousel";
 
 @import "spacings";
+
 
 

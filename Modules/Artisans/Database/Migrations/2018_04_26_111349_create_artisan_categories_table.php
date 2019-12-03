@@ -17,7 +17,8 @@ class CreateArtisanCategoriesTable extends Migration
             $table->increments('id');
 			$table->integer('category_id');
 			$table->integer('artisan_id');
-
+            $table->decimal('amount',8,2)->nullable();
+            $table->string('category_uri')->nullable();
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreateArtisanCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('artisan_categories');
+        Schema::dropIfExists('artisan_category');
     }
 }

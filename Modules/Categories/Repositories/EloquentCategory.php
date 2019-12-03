@@ -12,6 +12,34 @@ class EloquentCategory extends RepositoriesAbstract implements CategoryInterface
         $this->model = $model;
     }
 
+    public function create(array $data)
+    {
+        // Create the model
+        $model = $this->model->fill($data);
+
+        if ($model->save()) {
+            $this->_buildLookup($model);
+            return $model;
+        }
+
+        return false;
+    }
+
+    public function update(array $data)
+    {
+        $model = $this->model->find($data['id']);
+
+        $model->fill($data);
+
+        if ($model->save()) {
+            $this->_buildLookup($model);
+            $this->_resetChildrenUri($model);
+            return $model;
+        }
+
+        return $model;
+    }
+
     public function allBase(array $with = array(), $all = false)
     {
         $query = $this->make($with);
@@ -41,6 +69,16 @@ class EloquentCategory extends RepositoriesAbstract implements CategoryInterface
         return $model;
     }
 
+    public function bySearchQuery($query)
+    {
+        $models = $this->model
+            ->select(['category','uri'])
+            ->where('category','like','%'.$query.'%')
+            ->get();
+
+        return $models;
+    }
+
     public function getForDataTable()
     {
         $query = $this->model
@@ -49,7 +87,7 @@ class EloquentCategory extends RepositoriesAbstract implements CategoryInterface
                 'categories.id as category_id',
                 'categories.category',
                 'parent_category.category as parent_title',
-                'categories.amount',
+                'categories.uri',
                 'categories.is_hourly_based',
                 'categories.status'
             ]);
@@ -91,6 +129,49 @@ class EloquentCategory extends RepositoriesAbstract implements CategoryInterface
     {
         $query = $this->make($with);
         return $query->order()->base()->take($number)->get();
+    }
+
+    public function bySlugWithArtisanCount($slug,$with=[])
+    {
+        $model = $this->make($with);
+        $model = $model->withCount('artisans');
+        $model = $model->where('slug', '=', $slug)
+            ->first();
+
+        return $model;
+
+    }
+
+    public function delete($model)
+    {
+        $this->_resetChildrenUri($model);
+
+        if ($model->delete()) {
+            return true;
+        }
+
+        return false;
+    }
+
+    private function _resetChildrenUri(Model $category)
+    {
+        foreach ($category->children as $childPage) {
+            $childPage->uri = NULL;
+            $childPage->save();
+            $this->_resetChildrenUri($childPage);
+        }
+    }
+
+    private function _buildLookup($model)
+    {
+        if (!is_null($model->parent)) {
+            $parent_uri = $model->parent->uri;
+            $model->uri = $parent_uri . '/' . $model->slug;
+            $model->save();
+        } else {
+            $model->uri = $model->slug;
+            $model->save();
+        }
     }
 
 

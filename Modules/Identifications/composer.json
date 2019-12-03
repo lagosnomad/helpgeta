@@ -1,0 +1,25 @@
+{
+    "name": "adedolapoo/identifications",
+    "description": "",
+    "authors": [
+        {
+            "name": "Adedolapo Oduguwa",
+            "email": "adedolapoo@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Identifications\\Providers\\IdentificationsServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Identifications\\": ""
+        }
+    }
+}

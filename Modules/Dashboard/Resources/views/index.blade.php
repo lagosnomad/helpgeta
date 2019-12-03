@@ -22,7 +22,7 @@
                 </div>
                 <div class="details">
                     <div class="number">
-                        <span data-counter="counterup">0</span>
+                        <span data-counter="counterup">{{Orders::countAll()}}</span>
                     </div>
                     <div class="desc"> Requests </div>
                 </div>
@@ -85,24 +85,7 @@
 
     <div class="row">
         <div class="col-md-6 col-sm-12">
-            <div class="portlet light">
-                <div class="portlet-title">
-                    <div class="caption caption-md">
-                        <span class="caption-subject theme-font-color bold">
-                            Recent Requests
-                        </span>
-                    </div>
-                    <div class="actions">
-                        <a href="#" class="btn btn-circle red-sunglo btn-sm">
-                            <i class="fa fa-plus"></i> View All </a>
-                    </div>
-                </div>
-                <div class="portlet-body">
-                    <div class="alert alert-danger">
-                        No Requests Yet
-                    </div>
-                </div>
-            </div>
+            @include('orders::admin._list-dashboard')
         </div>
         <div class="col-md-6 col-sm-12">
             <div class="portlet light">
@@ -123,9 +106,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-12 col-sm-12">
-            {{--@include('history::admin.latest')--}}
         </div>
     </div>
 

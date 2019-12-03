@@ -15,15 +15,12 @@ class ArtisansPublicController extends BasePublicController
 
     public function show($id)
     {
-        $model = $this->repository->bySlug($id,['user','categories']);
+        $model = $this->repository->bySlug($id,['user','categories','identification']);
 
-        if($model->categories->count() == 1){
-            $category_id = $model->categories->first()->id;
-        }else{
-            $category_id = (integer) request()->get('category',0);
-            $category_id = ($model->categories->where('id',$category_id)->count()) ? $category_id : 0;
-        };
+        if(!$model->categories->count()){
+            return redirect()->route('categories');
+        }
 
-        return view('artisans::public.show')->with(compact('model','category_id'));
+        return view('artisans::public.show')->with(compact('model'));
     }
 }

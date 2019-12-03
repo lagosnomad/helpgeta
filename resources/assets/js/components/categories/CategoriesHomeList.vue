@@ -6,12 +6,12 @@
 				<h2 class="title is-3 is-spaced">Browse <span>Services</span></h2>
 			</div>
 			<div id="category-listing">
-				<swiper :options="swiperOption">
-					<div class="swiper-pagination" slot="pagination"></div>
-					<swiper-slide v-for="category in categories" :key="category.id">
-						<categories-list-item  :category="category" bgColor="bg-white"></categories-list-item>
-					</swiper-slide>
-				</swiper>
+					<swiper :options="swiperOption">
+						<div class="swiper-pagination" slot="pagination"></div>
+						<swiper-slide v-for="category in categories" :key="category.id">
+							<categories-list-item  :category="category" bgColor="bg-white"></categories-list-item>
+						</swiper-slide>
+					</swiper>
 
 			</div>
 			<div class="has-text-centered" style="margin-top: 20px;">
@@ -47,11 +47,11 @@
                             spaceBetween: 10,
                         },
                         768: {
-                            slidesPerView: 3,
+                            slidesPerView: 2,
                             spaceBetween: 10,
                         },
                         640: {
-                            slidesPerView: 2,
+                            slidesPerView: 1,
                             spaceBetween: 10,
                         },
                         320: {

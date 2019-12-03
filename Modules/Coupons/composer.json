@@ -1,0 +1,25 @@
+{
+    "name": "adedolapoo/coupons",
+    "description": "",
+    "authors": [
+        {
+            "name": "Adedolapo Oduguwa",
+            "email": "adedolapoo@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Coupons\\Providers\\CouponsServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Coupons\\": ""
+        }
+    }
+}

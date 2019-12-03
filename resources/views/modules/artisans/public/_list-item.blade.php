@@ -5,7 +5,7 @@
                 <figure class="image is-64x64">
                     <img src="{!! $item->user->present()->thumbSrc(64,64,[],'avatar') !!}" class="is-circled"
                          alt="Placeholder image">
-                </figure>
+                </figure>h
             </div>
             <div class="media-content">
                 <a href="{!! $item->present()->url !!}" class="artisan-card-name">

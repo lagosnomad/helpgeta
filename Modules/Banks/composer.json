@@ -1,0 +1,25 @@
+{
+    "name": "adedolapoo/banks",
+    "description": "",
+    "authors": [
+        {
+            "name": "Adedolapo Oduguwa",
+            "email": "adedolapoo@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Banks\\Providers\\BanksServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Banks\\": ""
+        }
+    }
+}

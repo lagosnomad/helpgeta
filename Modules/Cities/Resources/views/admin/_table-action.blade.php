@@ -1,4 +1,4 @@
-@if(has_access('cities.edit'))
+@if(has_access('cities.show'))
     {!! edit_btn(route('admin.cities.show',$id)) !!}
 @endif
 @if(has_access('cities.edit'))

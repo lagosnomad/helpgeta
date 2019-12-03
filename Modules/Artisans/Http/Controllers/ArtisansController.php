@@ -24,6 +24,13 @@ class ArtisansController extends BaseAdminController {
             ->with(compact('title', 'module'));
     }
 
+    public function show($model)
+    {
+        $request_columns = (array_except(config('orders.columns'),4));
+        $request_th = array_except(config('orders.th'),4);
+        return view('artisans::admin.show')->with(compact('model','request_columns','request_th'));
+    }
+
     public function create()
     {
         $module = $this->repository->getTable();
@@ -88,12 +95,24 @@ class ArtisansController extends BaseAdminController {
             ->editColumn('user', function ($row) {
                 return $row->present()->businessName;
             })
-            /*->editColumn('status', function ($row) {
+            ->editColumn('email', function ($row) {
+                return $row->user->email;
+            })
+            ->editColumn('username', function ($row) {
+                return $row->user->username;
+            })
+            ->editColumn('is_activated', function ($row) {
                 $html = '';
-                $html .= status_label($row->status);
+                $html .= artisan_status_label($row->is_activated);
 
                 return $html;
-            })*/
+            })
+            ->editColumn('is_verified', function ($row) {
+                $html = '';
+                $html .= artisan_status_label($row->is_verified);
+
+                return $html;
+            })
             ->addColumn('action', $model_table . '::admin._table-action')
             ->order(function ($query) {
                 $query->orderBy('id', 'desc');

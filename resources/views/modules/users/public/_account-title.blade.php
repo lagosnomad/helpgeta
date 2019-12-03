@@ -6,7 +6,7 @@
     </div>
     <div class="media-content">
         <div class="content">
-            <h1 class="title is-3 has-text-weight-semibold">{!! $user->present()->fullname !!}</h1>
+            <h1 class="title is-4 has-text-weight-semibold">{!! $user->present()->fullname !!}</h1>
             <p class="subtitle is-7">Member since {!! $user->present()->createdAt !!}</p>
         </div>
         <nav class="level is-mobile">
@@ -14,12 +14,12 @@
                 <a class="level-item">
                     <span class="icon is-small">
                       <i class="fa fa-edit" aria-hidden="true"></i>
-                    </span> Edit Profile
+                    </span> <span>Edit Profile</span>
                 </a>
                 <a class="level-item" href="{{url('auth/logout')}}">
                     <span class="icon is-small">
                       <i class="fa fa-sign-out" ></i>
-                    </span> Logout
+                    </span> <span>Logout</span>
                 </a>
             </div>
         </nav>

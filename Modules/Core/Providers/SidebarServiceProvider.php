@@ -19,9 +19,9 @@ class SidebarServiceProvider extends ServiceProvider
         if ($this->onBackend() === true ) {
             $manager->register(AdminSidebar::class);
         }
-        /*if ($this->onFrontend() === true ) {
+        if ($this->onFrontend() === true ) {
             $manager->register(PublicSidebar::class);
-        }*/
+        }
     }
 
     /**

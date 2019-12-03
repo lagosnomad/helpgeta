@@ -2,9 +2,20 @@
 
 let mix = require('laravel-mix');
 
+mix.options({
+    extractVueStyles: 'public/assets/public/css/components.css'
+});
+
 mix.sass('resources/assets/sass/app.scss', 'public/assets/public/css').options({
     processCssUrls: false
 });
+
+mix.styles([
+    'resources/assets/css/linear-icons.css',
+    'resources/assets/css/font-awesome.min.css',
+    'public/assets/public/css/app.css',
+    'public/assets/public/css/components.css'
+], 'public/assets/public/css/all.css');
 
 mix.js('resources/assets/js/app.js', 'public/assets/public/js').webpackConfig({
     resolve: {
@@ -13,8 +24,6 @@ mix.js('resources/assets/js/app.js', 'public/assets/public/js').webpackConfig({
         }
     }
 });
-
-mix.copy('resources/assets/css/linear-icons.css', 'public/assets/public/css/linear-icons.css');
 
 mix.copy('resources/assets/fonts', 'public/assets/public/fonts');
 
@@ -26,8 +35,4 @@ mix.browserSync({
         'resources/assets/js/components/**/*.vue',
         'Modules/**/Resources/css/views/*.php',
     ]
-});
-
-mix.options({
-    extractVueStyles: 'public/assets/public/css/components.css'
 });

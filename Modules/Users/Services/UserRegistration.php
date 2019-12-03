@@ -74,7 +74,8 @@ class UserRegistration
      */
     private function createArtisanForUser($user)
     {
-        $ArtisanData = $this->hasArtisanData() ? array_merge($this->input['artisan'], ['user_id' => $user->id]) : ['user_id' => $user->id];
-        app(ArtisanInterface::class)->create($ArtisanData);
+        $array_to_merge = ['user_id' => $user->id,'slug'=>$user->username];
+        $artisan_data = $this->hasArtisanData() ? array_merge($this->input['artisan'], $array_to_merge) : $array_to_merge;
+        app(ArtisanInterface::class)->create($artisan_data);
     }
 }

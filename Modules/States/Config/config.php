@@ -6,13 +6,12 @@ return [
 		'id' => 'asc',
 	],
 	'sidebar' => [
-		'weight' => 2,
-		'icon' => 'fa fa-file',
+		'weight' => 100,
+		'icon' => 'fa fa-map-marker',
 	],
 	'th' => ['name'],
 	'columns'=>[
             ['data'=>'name','name'=>'name'],
-            ['data'=>'status','name'=>'status'],
             ['data'=>'action','name'=>'action'],
      ],
 	'form'=>'States\Forms\StatesForm',

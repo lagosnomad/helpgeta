@@ -9,6 +9,8 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+window.EventBus = new Vue();
+
 import moment from 'moment';
 
 import store from './store';
@@ -39,11 +41,15 @@ Vue.use(VueCurrencyFilter,
     {
         symbol : '₦',
         thousandsSeparator: ',',
-        fractionCount: 2,
+        fractionCount: 0,
         fractionSeparator: '.',
         symbolPosition: 'front',
         symbolSpacing: false
     });
+
+/*import { BulmaAccordion, BulmaAccordionItem } from 'vue-bulma-accordion';
+Vue.component('bulma-accordion', BulmaAccordion)
+Vue.component('bulma-accordion-item', BulmaAccordionItem)*/
 
 Vue.filter('formatDate', function(value,format='MMMM D, YYYY, h:mm a') {
     if (value) {
@@ -59,7 +65,15 @@ Vue.filter('formatTime', function(value) {
 
 Vue.mixin({
     methods: {
-        route: route
+        route: route,
+        fetchArtisans(){
+            const loadingComponent = this.$loading.open({
+                container: document.getElementById('artisan-listings')
+            });
+            this.$store.dispatch('getSearchCategoryArtisans').then(()=>{
+                loadingComponent.close();
+            })
+        }
     }
 });
 
@@ -69,14 +83,25 @@ Vue.mixin({
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-/*Vue.component('categories-home-list', require('./components/categories/CategoriesHomeList.vue'));
+Vue.component('categories-account-form', require('./components/categories/CategoriesAccountForm.vue'));
+Vue.component('categories-home-list', require('./components/categories/CategoriesHomeList.vue'));
 Vue.component('categories-list', require('./components/categories/CategoriesList.vue'));
 Vue.component('artisans-list', require('./components/artisans/ArtisansList.vue'));
 Vue.component('artisans-categories-button', require('./components/artisans/ArtisansCategoriesButton.vue'));
+Vue.component('artisans-categories', require('./components/artisans/ArtisansCategories.vue'));
 Vue.component('checkout-request', require('./components/checkout/CheckoutRequest.vue'));
 Vue.component('request-button', require('./components/RequestButton.vue'));
+Vue.component('search-input', require('./components/SearchInput.vue'));
+Vue.component('nav-burger', require('./components/NavBurger.vue'));
+Vue.component('mobile-nav', require('./components/MobileNav.vue'));
 Vue.component('testimonials-list', require('./components/testimonials/TestimonialsList.vue'));
-Vue.component('how-it-works-section', require('./components/howitworks/HowItWorksSection.vue'));*/
+Vue.component('how-it-works-section', require('./components/howitworks/HowItWorksSection.vue'));
+Vue.component('states-select-input', require('./components/states/StatesSelectInput.vue'));
+Vue.component('cities-select-input', require('./components/cities/CitiesSelectInput.vue'));
+Vue.component('alert', require('./components/Alert.vue'));
+Vue.component('categories-sidebar', require('./components/categories/CategoriesSidebar.vue'));
+Vue.component('orders-table-list', require('./components/orders/OrdersTableList.vue'));
+Vue.component('orders-item-single', require('./components/orders/OrdersItemSingle.vue'));
 
 
 const app = new Vue({
@@ -97,8 +122,7 @@ const app = new Vue({
     },
     methods: {
         handleScroll (event) {
-            // Any code to be executed
-            // when the window is scrolled
+
         }
     },
 });

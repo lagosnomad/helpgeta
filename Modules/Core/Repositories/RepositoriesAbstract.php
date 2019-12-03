@@ -229,11 +229,7 @@ abstract class RepositoriesAbstract implements RepositoryInterface
     {
         $model = $this->make($with)
             ->where('slug', '=', $slug)
-            ->firstOrFail();
-
-        if (!count($model)) {
-            abort(404);
-        }
+            ->first();
 
         return $model;
 
@@ -393,9 +389,9 @@ abstract class RepositoriesAbstract implements RepositoryInterface
      */
     public function select($method = 'all', $firstEmpty = false, $value = 'title', $key = 'id')
     {
-        $items = $this->$method()->pluck($value, $key);
+        $items = $this->$method()->pluck($value, $key)->all();
         if ($firstEmpty) {
-            $items = ['' => ''] + $items;
+            $items = ['' => ' -- Select -- '] + $items;
         }
         return $items;
     }

@@ -1,45 +1,116 @@
-.banner-section{
-    height: 500px;
-    background: #044ead url(../img/bg.jpg);
-    overflow: hidden;
+.banner-section {
+    background-size: cover!important;
+    background-position: center!important;
+    margin: 0;
+    position: relative;
+    padding:10% 0;
+    background-image:url(../img/banner_alt.jpg);
+    .banner-buttons a{
+        @include mobile {
+            margin-bottom:1.3rem;
+            font-size: 1.2rem;
+        }
+    }
 }
 
-.banner-caption{
-     padding: 5.5rem 1.5rem;   
+.banner-section:before {
+    content: "";
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    background: #282C32;
+    background: linear-gradient(-48deg, #000 25%, #1b8aec 100%);
+    opacity: 0.7;
 }
 
-/*.banner-item {
-    display: flex;
-    align-items: center;
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 500px;
-    padding-bottom: 20px;
-    padding-left: 5px;
-    padding-right: 5px;
+.inner-overlay {
+    background: linear-gradient(-48deg, #043da4 25%, #0289cd 100%);
     width: 100%;
-}*/
-
-
-.banner-caption .title{
-     color:#fff;   
-}
-
-.banner-caption .subtitle{
-     color:#f5f5f5;   
+    height: 100%;
+    padding: 4.5rem 1rem 9.5rem;
 }
 
 
-@media screen and (max-width:768px) {
-    
+.banner-caption .button.is-for-banner {
+    background-color: rgba(0, 0, 0, 0.25);
+    border-color: transparent;
+    color: #fff;
 }
 
-@media screen and (min-width:769px) {
-    
+.banner-caption .button i {
+    margin-right: 10px;
 }
 
-@media screen and (min-width:980px) {
 
-    
+/* Stats */
+.widget-stats{
+    margin-top: 5.5rem;
+    @include mobile{
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    .cmp-overview {
+        width: 100%;
+        display: flex;
+        color: #fff;
+        align-items: center;
+        justify-content: center;
+        @include mobile{
+            margin-bottom: 1rem;
+        }
+    }
+
+    .cmp-overview .cmp-icon {
+        width: 55px;
+        height: auto;
+        float: left;
+        position: relative;
+    }
+
+    .cmp-overview .cmp-icon .cmp-i {
+        font-size: 55px;
+    }
+
+    .cmp-overview .cmp-icon i.fa {
+        position: absolute;
+        right: -10px;
+        bottom: -5px;
+        width: 22px;
+        height: 22px;
+        background: #1b8aec;
+        border-radius: 50%;
+        line-height: 20px;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .cmp-detail {
+        margin-left: 20px;
+        display: inline-block;
+        text-align: left;
+    }
+
+    .cmp-detail h3 {
+        margin-bottom: 0;
+        color: #fff;
+        font-size: 25px;
+    }
+
+    .cmp-detail span {
+        font-size: 13px;
+        opacity: .8;
+        float: left;
+    }
+
+}
+
+.banner-caption .title {
+    color: #fff;
+}
+
+.banner-caption .subtitle {
+    color: #f5f5f5;
 }

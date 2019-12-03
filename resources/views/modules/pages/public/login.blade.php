@@ -5,7 +5,7 @@
     <section class="section bg-grey" id="page-login">
         <div class="container">
             <div class="columns is-centered">
-                <div class="column is-4">
+                <div class="column is-6-tablet is-4-desktop">
                     <div class="card border-radius-10">
                         <header class="card-header main-heading is-marginless">
                             <h2 class="card-header-title">{{$page->title}}</h2>
@@ -18,9 +18,9 @@
                             @include('core::public._partials.notify')
                             {!! Form::open(['route'=>'login.post']) !!}
                                 <div class="field">
-                                    <label class="label">Email Address</label>
+                                    <label class="label">Email Address / Username</label>
                                     <div class="control has-icons-left">
-                                        <input name="email" class="input" type="text" placeholder="Enter your username" value="{{old('email')}}">
+                                        <input name="email" class="input" type="text" placeholder="Enter your username or email" value="{{old('email')}}">
                                         <span class="icon is-small is-left"><i class="fa fa-user"></i></span>
                                     </div>
                                 </div>

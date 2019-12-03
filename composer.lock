@@ -4,8 +4,67 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ad3de1e330febb01d64e5f6be7a0667f",
+    "content-hash": "7f7acb10637df353b47139b7ac4df6a7",
     "packages": [
+        {
+            "name": "anhskohbo/no-captcha",
+            "version": "3.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/anhskohbo/no-captcha.git",
+                "reference": "164715a2de0fded5979e7a9b7721785d72a4a7d3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/anhskohbo/no-captcha/zipball/164715a2de0fded5979e7a9b7721785d72a4a7d3",
+                "reference": "164715a2de0fded5979e7a9b7721785d72a4a7d3",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.2",
+                "illuminate/support": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*|5.7.*",
+                "php": ">=5.5.5"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Anhskohbo\\NoCaptcha\\NoCaptchaServiceProvider"
+                    ],
+                    "aliases": {
+                        "NoCaptcha": "Anhskohbo\\NoCaptcha\\Facades\\NoCaptcha"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Anhskohbo\\NoCaptcha\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "anhskohbo",
+                    "email": "anhskohbo@gmail.com"
+                }
+            ],
+            "description": "No CAPTCHA reCAPTCHA For Laravel.",
+            "keywords": [
+                "captcha",
+                "laravel",
+                "laravel4",
+                "laravel5",
+                "no-captcha",
+                "recaptcha"
+            ],
+            "time": "2018-08-27T02:16:31+00:00"
+        },
         {
             "name": "barryvdh/laravel-debugbar",
             "version": "v3.1.4",
@@ -271,6 +330,109 @@
             "time": "2017-02-23T12:05:30+00:00"
         },
         {
+            "name": "creitive/breadcrumbs",
+            "version": "v3.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/creitive/breadcrumbs.git",
+                "reference": "fdd8b8567684025759e6f7b29b186d2e9fff463e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/creitive/breadcrumbs/zipball/fdd8b8567684025759e6f7b29b186d2e9fff463e",
+                "reference": "fdd8b8567684025759e6f7b29b186d2e9fff463e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.4",
+                "squizlabs/php_codesniffer": "^2.5",
+                "symfony/css-selector": "~2.0",
+                "symfony/dom-crawler": "~2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Creitive\\Breadcrumbs\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Milos Levacic",
+                    "email": "milos.levacic@creitive.com"
+                },
+                {
+                    "name": "Luka Macun",
+                    "email": "luka.macun@creitive.com"
+                }
+            ],
+            "description": "Simple breadcrumbs class",
+            "homepage": "https://github.com/creitive/breadcrumbs",
+            "keywords": [
+                "breadcrumbs"
+            ],
+            "time": "2018-01-27T13:47:58+00:00"
+        },
+        {
+            "name": "creitive/laravel5-breadcrumbs",
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/creitive/laravel5-breadcrumbs.git",
+                "reference": "46ba7927d6d7767a5baa6b899fb3890b62c715c8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/creitive/laravel5-breadcrumbs/zipball/46ba7927d6d7767a5baa6b899fb3890b62c715c8",
+                "reference": "46ba7927d6d7767a5baa6b899fb3890b62c715c8",
+                "shasum": ""
+            },
+            "require": {
+                "creitive/breadcrumbs": "^3.0",
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Creitive\\Breadcrumbs\\BreadcrumbsServiceProvider"
+                    ],
+                    "aliases": {
+                        "Breadcrumbs": "Creitive\\Breadcrumbs\\Facades\\Breadcrumbs"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Creitive\\Breadcrumbs\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Milos Levacic",
+                    "email": "milos.levacic@creitive.com"
+                }
+            ],
+            "description": "Breadcrumbs integration for Laravel 5",
+            "homepage": "https://github.com/creitive/laravel5-breadcrumbs",
+            "keywords": [
+                "breadcrumbs",
+                "laravel"
+            ],
+            "time": "2018-01-27T13:45:37+00:00"
+        },
+        {
             "name": "dnoegel/php-xdg-base-dir",
             "version": "0.1",
             "source": {
@@ -474,55 +636,6 @@
             "time": "2017-10-12T15:59:13+00:00"
         },
         {
-            "name": "edvinaskrucas/notification",
-            "version": "5.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/edvinaskrucas/notification.git",
-                "reference": "f8172fb48397483004fbbf0a8825d20dde696810"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/edvinaskrucas/notification/zipball/f8172fb48397483004fbbf0a8825d20dde696810",
-                "reference": "f8172fb48397483004fbbf0a8825d20dde696810",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/session": "^5.4",
-                "illuminate/support": "^5.4",
-                "php": "^5.6|^7.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "~0.9",
-                "phpunit/phpunit": "~5.7"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Krucas\\Notification": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Edvinas Kručas",
-                    "email": "edv.krucas@gmail.com"
-                }
-            ],
-            "description": "Package for Laravel for helping to manage flash / instant notifications / messages.",
-            "keywords": [
-                "flash",
-                "instant",
-                "laravel",
-                "messages",
-                "notifications"
-            ],
-            "time": "2017-03-27T19:30:18+00:00"
-        },
-        {
             "name": "egulias/email-validator",
             "version": "2.1.3",
             "source": {
@@ -678,6 +791,187 @@
                 "trusted proxy"
             ],
             "time": "2018-02-07T20:20:57+00:00"
+        },
+        {
+            "name": "guzzlehttp/guzzle",
+            "version": "6.3.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/guzzle.git",
+                "reference": "407b0cb880ace85c9b63c5f9551db498cb2d50ba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/407b0cb880ace85c9b63c5f9551db498cb2d50ba",
+                "reference": "407b0cb880ace85c9b63c5f9551db498cb2d50ba",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/promises": "^1.0",
+                "guzzlehttp/psr7": "^1.4",
+                "php": ">=5.5"
+            },
+            "require-dev": {
+                "ext-curl": "*",
+                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.4 || ^7.0",
+                "psr/log": "^1.0"
+            },
+            "suggest": {
+                "psr/log": "Required for using the Log middleware"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "6.3-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/functions_include.php"
+                ],
+                "psr-4": {
+                    "GuzzleHttp\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "Guzzle is a PHP HTTP client library",
+            "homepage": "http://guzzlephp.org/",
+            "keywords": [
+                "client",
+                "curl",
+                "framework",
+                "http",
+                "http client",
+                "rest",
+                "web service"
+            ],
+            "time": "2018-04-22T15:46:56+00:00"
+        },
+        {
+            "name": "guzzlehttp/promises",
+            "version": "v1.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/promises.git",
+                "reference": "a59da6cf61d80060647ff4d3eb2c03a2bc694646"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/a59da6cf61d80060647ff4d3eb2c03a2bc694646",
+                "reference": "a59da6cf61d80060647ff4d3eb2c03a2bc694646",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GuzzleHttp\\Promise\\": "src/"
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "Guzzle promises library",
+            "keywords": [
+                "promise"
+            ],
+            "time": "2016-12-20T10:07:11+00:00"
+        },
+        {
+            "name": "guzzlehttp/psr7",
+            "version": "1.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/psr7.git",
+                "reference": "f5b8a8512e2b58b0071a7280e39f14f72e05d87c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/f5b8a8512e2b58b0071a7280e39f14f72e05d87c",
+                "reference": "f5b8a8512e2b58b0071a7280e39f14f72e05d87c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "psr/http-message": "~1.0"
+            },
+            "provide": {
+                "psr/http-message-implementation": "1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GuzzleHttp\\Psr7\\": "src/"
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                },
+                {
+                    "name": "Tobias Schultze",
+                    "homepage": "https://github.com/Tobion"
+                }
+            ],
+            "description": "PSR-7 message implementation that also provides common utility methods",
+            "keywords": [
+                "http",
+                "message",
+                "request",
+                "response",
+                "stream",
+                "uri",
+                "url"
+            ],
+            "time": "2017-03-20T17:10:46+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -1391,6 +1685,74 @@
             "time": "2017-12-15T11:13:46+00:00"
         },
         {
+            "name": "mccool/laravel-auto-presenter",
+            "version": "7.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel-auto-presenter/laravel-auto-presenter.git",
+                "reference": "79ba1e223c26d7a32b4378b46c79af05d8fbcca7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel-auto-presenter/laravel-auto-presenter/zipball/79ba1e223c26d7a32b4378b46c79af05d8fbcca7",
+                "reference": "79ba1e223c26d7a32b4378b46c79af05d8fbcca7",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/container": "5.5.*|5.6.*",
+                "illuminate/contracts": "5.5.*|5.6.*",
+                "illuminate/events": "5.5.*|5.6.*",
+                "illuminate/pagination": "5.5.*|5.6.*",
+                "illuminate/support": "5.5.*|5.6.*",
+                "illuminate/view": "5.5.*|5.6.*",
+                "php": "^7.1.3"
+            },
+            "require-dev": {
+                "graham-campbell/analyzer": "^2.0",
+                "graham-campbell/testbench": "^5.0",
+                "mockery/mockery": "^1.0",
+                "phpunit/phpunit": "^6.5|^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "7.0-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "McCool\\LaravelAutoPresenter\\AutoPresenterServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "McCool\\LaravelAutoPresenter\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Shawn McCool",
+                    "email": "shawn@heybigname.com"
+                },
+                {
+                    "name": "Graham Campbell",
+                    "email": "graham@alt-three.com"
+                }
+            ],
+            "description": "A system for auto-decorating models with presenter objects.",
+            "keywords": [
+                "eloquent",
+                "laravel",
+                "lpm",
+                "presenter"
+            ],
+            "time": "2018-04-22T17:07:24+00:00"
+        },
+        {
             "name": "monolog/monolog",
             "version": "1.23.0",
             "source": {
@@ -1738,6 +2100,56 @@
                 "psr"
             ],
             "time": "2017-02-14T16:28:37+00:00"
+        },
+        {
+            "name": "psr/http-message",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/http-message.git",
+                "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/http-message/zipball/f6561bf28d520154e4b0ec72be95418abe6d9363",
+                "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Http\\Message\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for HTTP messages",
+            "homepage": "https://github.com/php-fig/http-message",
+            "keywords": [
+                "http",
+                "http-message",
+                "psr",
+                "psr-7",
+                "request",
+                "response"
+            ],
+            "time": "2016-08-06T14:39:51+00:00"
         },
         {
             "name": "psr/log",
@@ -2848,6 +3260,57 @@
             "time": "2018-04-03T05:24:00+00:00"
         },
         {
+            "name": "tightenco/ziggy",
+            "version": "v0.6.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tightenco/ziggy.git",
+                "reference": "cf6dc47db14304cd6fe2b6d3fae22b411586e8dc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tightenco/ziggy/zipball/cf6dc47db14304cd6fe2b6d3fae22b411586e8dc",
+                "reference": "cf6dc47db14304cd6fe2b6d3fae22b411586e8dc",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "~5.6.7"
+            },
+            "require-dev": {
+                "mikey179/vfsstream": "^1.6",
+                "orchestra/testbench": "~3.6"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Tightenco\\Ziggy\\ZiggyServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Tightenco\\Ziggy\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matt Stauffer",
+                    "email": "matt@tighten.co"
+                },
+                {
+                    "name": "Daniel Coulbourne",
+                    "email": "daniel@tighten.co"
+                }
+            ],
+            "description": "Generates a Blade directive exporting all of your named Laravel routes. Also provides a nice route() helper function in JavaScript.",
+            "time": "2018-07-06T02:53:28+00:00"
+        },
+        {
             "name": "tijsverkoyen/css-to-inline-styles",
             "version": "2.2.1",
             "source": {
@@ -2893,6 +3356,111 @@
             "description": "CssToInlineStyles is a class that enables you to convert HTML-pages/files into HTML-pages/files with inline styles. This is very useful when you're sending emails.",
             "homepage": "https://github.com/tijsverkoyen/CssToInlineStyles",
             "time": "2017-11-27T11:13:29+00:00"
+        },
+        {
+            "name": "twilio/sdk",
+            "version": "5.23.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twilio/twilio-php.git",
+                "reference": "b91b75451b7cb20c991b2e05c7711dbe7815ca48"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twilio/twilio-php/zipball/b91b75451b7cb20c991b2e05c7711dbe7815ca48",
+                "reference": "b91b75451b7cb20c991b2e05c7711dbe7815ca48",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "apigen/apigen": "^4.1",
+                "phpunit/phpunit": "4.5.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Twilio\\": "Twilio/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Twilio API Team",
+                    "email": "api@twilio.com"
+                }
+            ],
+            "description": "A PHP wrapper for Twilio's API",
+            "homepage": "http://github.com/twilio/twilio-php",
+            "keywords": [
+                "api",
+                "sms",
+                "twilio"
+            ],
+            "time": "2018-10-04T18:29:11+00:00"
+        },
+        {
+            "name": "unicodeveloper/laravel-paystack",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/unicodeveloper/laravel-paystack.git",
+                "reference": "d2226192de7781386a63748c0815767481e003cc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/unicodeveloper/laravel-paystack/zipball/d2226192de7781386a63748c0815767481e003cc",
+                "reference": "d2226192de7781386a63748c0815767481e003cc",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "5.*|6.*",
+                "illuminate/support": "5.*",
+                "php": "^5.4.0|^7.0"
+            },
+            "require-dev": {
+                "mockery/mockery": ">=0.7.2",
+                "phpunit/phpunit": "4.*",
+                "satooshi/php-coveralls": "^0.7.0",
+                "scrutinizer/ocular": "~1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Unicodeveloper\\Paystack\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "unicodeveloper",
+                    "email": "prosperotemuyiwa@gmail.com"
+                },
+                {
+                    "name": "iamfunsho",
+                    "email": "info@devfunsho.com"
+                }
+            ],
+            "description": "A Laravel 5 Package for Paystack",
+            "keywords": [
+                "github",
+                "laravel",
+                "laravel 5",
+                "open source",
+                "payments",
+                "paystack",
+                "paystack.co",
+                "php",
+                "subscription"
+            ],
+            "time": "2016-12-24T08:05:37+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -3105,6 +3673,55 @@
                 "instantiate"
             ],
             "time": "2017-07-22T11:58:36+00:00"
+        },
+        {
+            "name": "edvinaskrucas/notification",
+            "version": "5.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/edvinaskrucas/notification.git",
+                "reference": "f8172fb48397483004fbbf0a8825d20dde696810"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/edvinaskrucas/notification/zipball/f8172fb48397483004fbbf0a8825d20dde696810",
+                "reference": "f8172fb48397483004fbbf0a8825d20dde696810",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/session": "^5.4",
+                "illuminate/support": "^5.4",
+                "php": "^5.6|^7.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~5.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Krucas\\Notification": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Edvinas Kručas",
+                    "email": "edv.krucas@gmail.com"
+                }
+            ],
+            "description": "Package for Laravel for helping to manage flash / instant notifications / messages.",
+            "keywords": [
+                "flash",
+                "instant",
+                "laravel",
+                "messages",
+                "notifications"
+            ],
+            "time": "2017-03-27T19:30:18+00:00"
         },
         {
             "name": "filp/whoops",

@@ -19,10 +19,10 @@
                         </ul>
                     </nav>
                     <div class="page-heading">
-                        <h2 class="title is-3 is-spaced">Available <span>Services</span></h2>
-                        <p class="subtitle is-6">
+                        <h1 class="title is-3 is-spaced">Available <span>Services</span></h1>
+                       {{-- <p class="subtitle is-6">
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem voluptatem obcaecati!
-                        </p>
+                        </p>--}}
                     </div>
 
                     <categories-list :categories="{{$models}}"></categories-list>

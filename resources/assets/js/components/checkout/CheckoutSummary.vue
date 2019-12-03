@@ -1,8 +1,18 @@
 <template>
-	<div class="box summary-box bg-grey">
-		<p class="title is-5">Request Summary</p>
-		<p>Below are the summarized details of the above selections</p>
+	<div class="has-padding-l-5 has-no-padding-l-mobile">
+		<div class="summary-widget" v-if="checkEmptySelectedCategory">
+			<p class="title is-6">Selected Service</p>
+			<table class="table">
+				<tbody>
+				<tr>
+					<td>{{selectedCategory.category}}</td>
+					<td>{{selectedCategory.pivot.amount | currency}}</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
 		<div class="summary-widget">
+
 			<p class="title is-6">Selected Days</p>
 			<div class="content">
 				<div v-if="requestDates.length">
@@ -12,21 +22,20 @@
 								{{key + 1}}.
 							</div>
 							<div class="level-item">
-								<strong>Date: </strong>
 								{{requestDate.date | formatDate}}
 							</div>
 							<div class="level-item" v-if="requestDate.hours">
-								<strong>No. of Hours: </strong> {{requestDate.hours}}
+								<strong>Hours: </strong> {{requestDate.hours}}
 							</div>
 						</div>
 					</div>
 				</div>
 				<span class="has-text-danger" v-else>
-						No date has been added, please add a date in the "selected date  &  time" section above
+						No day(s) has been added for the selected service above.
 				</span>
 			</div>
 		</div>
-		<div class="summary-widget">
+		<!--<div class="summary-widget">
 			<p class="title is-6">Selected Service(s)</p>
 			<div class="content">
 				<table class="table" v-if="selectedCategoryItems.length">
@@ -47,9 +56,9 @@
 					No sub services has been selected, select one or more sub services in the "Service Selected and Pricing" Section above
 				</span>
 			</div>
-		</div>
+		</div>-->
 		<div class="summary-total">
-			<table class="table">
+			<table class="table is-fullwidth">
 				<tr>
 					<td class="v-align">
 						<span class="title is-6">Total Days: </span>
@@ -58,7 +67,7 @@
 						<span class="is-size-5">{{checkoutTotalDays}}</span>
 					</td>
 				</tr>
-				<tr v-if="category.is_hourly_based">
+				<tr v-if="selectedCategory.is_hourly_based">
 					<td class="v-align">
 						<span class="title is-6">Total Hours: </span>
 					</td>
@@ -75,8 +84,8 @@
 					</td>
 				</tr>
 			</table>
-			<div class="buttons is-pulled-right">
-				<checkout-payment></checkout-payment>
+			<div class="buttons">
+				<checkout-button></checkout-button>
 			</div>
 		</div>
 		<div class="is-clearfix"></div>
@@ -85,65 +94,65 @@
 
 <script>
     import {mapGetters} from 'vuex';
-    import CheckoutPayment from './CheckoutPayment';
+    import CheckoutButton from './CheckoutButton';
+
     export default {
         name: 'CheckoutSummary',
         computed: {
+            checkEmptySelectedCategory() {
+                return !_.isEmpty(this.selectedCategory);
+            },
             ...mapGetters([
-                'selectedCategoryItems',
-	            'requestDates',
-	            'checkoutTotal',
-	            'checkoutTotalHours',
-	            'checkoutTotalDays',
-	            'artisan',
-	            'category'
+                'selectedCategory',
+                'requestDates',
+                'checkoutTotal',
+                'checkoutTotalHours',
+                'checkoutTotalDays',
+                'artisan',
+                'category'
             ]),
         },
-	    components: {
-            CheckoutPayment
-	    }
+        components: {
+            CheckoutButton
+        }
 
     }
 </script>
 
 <style lang="scss" scoped>
-	.summary-box {
-		.title {
-			margin-bottom: 1rem;
-		}
+	.summary-widget {
+		margin-bottom: 1rem;
 		.table {
-			background: transparent !important;
+			margin: 0;
 		}
-		.summary-widget {
-			margin-top: 2rem;
-			.title {
-				margin-bottom: 0.8rem;
-			}
+		.title {
+			margin-bottom: 0.85rem !important;
 		}
-		.level{
-			padding: .8rem;
-			&:not(:last-child){
-				margin-bottom: 0;
-				border-bottom: 1px solid #dbdbdb;
-			}
-			.level-item strong{
-				display:inline-block;
-				margin-right: 10px;
-			}
+	}
+
+	.level {
+		padding: .8rem;
+		&:not(:last-child) {
+			margin-bottom: 0;
+			border-bottom: 1px solid #dbdbdb;
 		}
-		.summary-total {
-			margin: 1.5rem 0 1rem;
-			float: right;
-			.table{
-				margin-bottom: 1.5rem !important;
-			}
-			.label{
-				/*font-size: .94rem;
-				font-weight: 600*/
-			}
-			.v-align{
-				vertical-align: middle;
-			}
+		.level-item strong {
+			display: inline-block;
+			margin-right: 10px;
+		}
+	}
+
+	.summary-total {
+		margin-top: 1rem;
+		.table {
+			margin-bottom: 1.5rem !important;
+		}
+		.label {
+			/*font-size: .94rem;
+			font-weight: 600*/
+		}
+		.v-align {
+			vertical-align: middle;
 		}
 	}
 </style>

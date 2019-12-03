@@ -23,7 +23,8 @@ class Category extends Base
         'is_hourly_based',
         'parent_id',
         'icon',
-        'amount'
+        'amount',
+        'uri'
     ];
 
     protected $appends = ['url','image'];
@@ -54,6 +55,11 @@ class Category extends Base
     public function items()
     {
         return $this->children()->with('items');
+    }
+
+    public function itemsWithArtisansCount()
+    {
+        return $this->children()->withCount('artisans')->with('items');
     }
 
     public function scopeBase(Builder $query)

@@ -1,3 +1,11 @@
+<div class="form-widget">
+    <aside>
+        <p class="title">Profile Picture</p>
+    </aside>
+    <div class="form-widget-content">
+
+    </div>
+</div>
 <div class="panel">
     <div class="panel-heading">
         Location

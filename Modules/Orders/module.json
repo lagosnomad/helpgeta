@@ -7,11 +7,13 @@
     "order": 0,
     "providers": [
         "Modules\\Orders\\Providers\\OrdersServiceProvider",
-        "Modules\\Orders\\Providers\\RouteServiceProvider"
+        "Modules\\Orders\\Providers\\RouteServiceProvider",
+        "Modules\\Orders\\Providers\\EventServiceProvider"
     ],
     "aliases": {},
     "files": [
-        "start.php"
+        "start.php",
+        "helpers.php"
     ],
     "requires": []
 }

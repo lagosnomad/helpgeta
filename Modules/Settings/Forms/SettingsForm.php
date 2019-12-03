@@ -37,6 +37,12 @@ class SettingsForm extends Form {
             ->add('map', 'textarea', [
                 'attr' => ['class' => 'form-control', 'rows' => 4]
             ])
+            ->add('website_description', 'textarea', [
+                'attr' => ['class' => 'form-control', 'rows' => 4]
+            ])
+            ->add('website_keywords', 'textarea', [
+                'attr' => ['class' => 'form-control', 'rows' => 4]
+            ])
             ->add('image', 'file', [
                 'label' => 'Logo'
             ])

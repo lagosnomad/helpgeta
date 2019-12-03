@@ -1,8 +1,11 @@
-<div class="panel">
-    <div class="panel-heading">
-        Bank Information
-    </div>
-    <div class="panel-body">
+<div class="form-widget">
+    <aside>
+        <p class="title">Bank Account</p>
+        <p class="subtitle">
+            Please provide your account details as payments will be made 24hrs after the job has been completed
+        </p>
+    </aside>
+    <div class="form-widget-content">
         <div class="columns">
             <div class="column is-6">
                 <div class="field">
@@ -12,9 +15,6 @@
                     </div>
                 </div>
             </div>
-
-        </div>
-        <div class="columns">
             <div class="column is-6">
                 <div class="field">
                     <label class="label">Account Name</label>
@@ -23,6 +23,8 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="columns">
             <div class="column is-6">
                 <div class="field">
                     <label class="label">Account Number</label>

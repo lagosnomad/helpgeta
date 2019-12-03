@@ -25,7 +25,7 @@ class User extends EloquentUser implements UserInterface {
     /**
      * {@inheritDoc}
      */
-    protected $loginNames = ['email'];
+    protected $loginNames = ['email','username'];
 
     protected $presenter = 'Modules\Users\Presenters\ModulePresenter';
 
@@ -116,5 +116,15 @@ class User extends EloquentUser implements UserInterface {
     public function artisan()
     {
         return $this->hasOne('Modules\Artisans\Entities\Artisan');
+    }
+
+    public function state()
+    {
+        return $this->belongsTo('Modules\States\Entities\State');
+    }
+
+    public function city()
+    {
+        return $this->belongsTo('Modules\Cities\Entities\City');
     }
 }

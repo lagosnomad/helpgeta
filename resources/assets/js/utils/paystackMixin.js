@@ -2,7 +2,6 @@ const paystackMixin = {
     data(){
         return {
             paystackkey: "pk_test_9acc2b809ccde5e4cce9c52d3ea1a60efb0839fc",
-            email: "helpgetateam@gmail.com",
         }
     },
     computed: {

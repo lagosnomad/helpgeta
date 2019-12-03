@@ -1,0 +1,18 @@
+{
+    "name": "Reports",
+    "alias": "reports",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Reports\\Providers\\ReportsServiceProvider",
+        "Modules\\Reports\\Providers\\RouteServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "start.php",
+        "helpers.php"
+    ],
+    "requires": []
+}

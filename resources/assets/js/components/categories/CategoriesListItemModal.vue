@@ -1,9 +1,14 @@
 <template>
 	<div class="modal-card">
-		<header class="modal-card-head">
-			<p class="modal-card-title">Browse Service Sub-categories</p>
-		</header>
 		<section class="modal-card-body">
+
+			<div class="has-text-centered has-margin-b-3">
+				<h2 class="title is-4">Find Service Providers</h2>
+				<p class="subtitle is-7">
+					Click on the service on any sub categories below <br>to start browsing for service providers
+				</p>
+			</div>
+
 			<div class="columns">
 				<div class="column is-5">
 					<div class="card category-card bg-grey">
@@ -54,3 +59,9 @@
 	    }
     }
 </script>
+
+<style lang="scss" scoped>
+	.modal-card-body{
+		padding:3rem 2rem;
+	}
+</style>

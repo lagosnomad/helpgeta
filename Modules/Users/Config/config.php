@@ -9,11 +9,12 @@ return [
     'sidebar' => [
         'weight' => 2,
     ],
-    'th' => ['first_name', 'last_name', 'email', 'created_at'],
+    'th' => ['first_name', 'last_name', 'email','username','created_at'],
     'columns' => [
         ['data' => 'first_name', 'name' => 'first_name'],
         ['data' => 'last_name', 'name' => 'last_name'],
         ['data' => 'email', 'name' => 'email'],
+        ['data' => 'username', 'name' => 'username'],
         ['data' => 'created_at', 'name' => 'created_at'],
         ['data' => 'action', 'name' => 'action'],
     ],
@@ -56,7 +57,7 @@ return [
     | Define which column(s) you'd like to use to login with, currently
     | only supported by the Sentinel user driver
     */
-    'login-columns' => ['email'],
+    'login-columns' => ['email','username'],
     /*
     |--------------------------------------------------------------------------
     | Allow anonymous user registration
@@ -77,6 +78,9 @@ return [
         'last_name',
         'phone',
         'address',
-        'avatar'
+        'avatar',
+        'username',
+        'state_id',
+        'city_id'
     ],
 ];

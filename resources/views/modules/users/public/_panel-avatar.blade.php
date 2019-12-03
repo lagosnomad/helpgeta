@@ -1,13 +1,14 @@
-<div class="panel">
-    <div class="panel-heading">
-        Profile Picture
-    </div>
-    <div class="panel-body">
+<div class="form-widget">
+    <aside>
+        <p class="title">Profile Picture</p>
+    </aside>
+    <div class="form-widget-content">
         <div class="level">
             <div class="level-left">
                 <div class="level-item">
                     <figure class="image is-64x64">
-                        <img src="{!! $model->present()->thumbSrc(64,64,[],'avatar') !!}" alt="Image" class="is-circled">
+                        <img src="{!! $model->present()->thumbSrc(64,64,[],'avatar') !!}" alt="Image"
+                             class="is-circled">
                     </figure>
                 </div>
                 <div class="level-item">

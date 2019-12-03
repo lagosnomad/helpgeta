@@ -2,6 +2,7 @@
 
 namespace Modules\Artisans\Entities;
 
+use Illuminate\Database\Eloquent\Builder;
 use Modules\Core\Entities\Base;
 use Modules\Core\Presenters\PresentableTrait;
 
@@ -22,7 +23,12 @@ class Artisan extends Base
         'hours_available',
         'is_available',
         'user_id',
-        'bio'
+        'slug',
+        'bio',
+        'identification_file',
+        'identification_id',
+        'is_activated',
+        'is_verified'
     ];
 
     public function user()
@@ -32,7 +38,19 @@ class Artisan extends Base
 
     public function categories()
     {
-        return $this->belongsToMany('Modules\Categories\Entities\Category');
+        return $this->belongsToMany('Modules\Categories\Entities\Category','artisan_category')
+            ->withPivot(['amount'])
+            ->withTimestamps();
+    }
+
+    public function identification()
+    {
+        return $this->belongsTo('Modules\Identifications\Entities\Identification');
+    }
+
+    public function scopeOnline(Builder $query)
+    {
+        return $query->where('is_activated', 1);
     }
 
 }

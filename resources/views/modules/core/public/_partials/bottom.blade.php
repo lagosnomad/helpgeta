@@ -1,6 +1,7 @@
 @routes
 <script>
     window.rootToastMsg = "{{session('toast_msg')}}";
+    window.BaseUrl = "{{env('APP_URL')}}"
 </script>
 <script src="{{ asset('assets/public/js/app.js') }}"></script>
 

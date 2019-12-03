@@ -1,23 +1,19 @@
 @if (session()->has('success'))
-    <div class="notification is-success">
-        <button class="delete"></button>
-        <p>{{session('success')}}</p>
-    </div>
+    <alert type="is-success">
+        {{session('success')}}
+    </alert>
 @endif
 
 @if (session()->has('error'))
-    <div class="notification is-danger">
-        <button class="delete"></button>
-        <p>{{session('error')}}</p>
-    </div>
+    <alert type="is-danger">
+        {{session('error')}}
+    </alert>
 @endif
 
 @if (count($errors) > 0)
-    <div class="notification is-danger">
-        <button class="delete"></button>
-        {{--<strong>Oops!!! The following error occured</strong><br>--}}
+    <alert type="is-danger">
         @foreach($errors->all() as $errors)
             {{$errors}} <br>
         @endforeach
-    </div>
+    </alert>
 @endif

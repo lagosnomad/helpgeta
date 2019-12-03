@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::bind('artisan', function ($id) {
-    return app(\Modules\Artisans\Repositories\ArtisanInterface::class)->byId($id);
+    return app(\Modules\Artisans\Repositories\ArtisanInterface::class)->byId($id,['user']);
 });
 
 Route::group(['prefix' => 'artisans'], function () {
@@ -27,9 +27,14 @@ Route::group(['prefix' => 'artisans'], function () {
         'as' => 'admin.artisans.update',
         'uses' => 'ArtisansController@update'
     ]);
+
     Route::get('datatable', [
         'as' => 'admin.artisans.datatable',
         'uses' => 'ArtisansController@dataTable'
+    ]);
+    Route::get('{artisan}', [
+        'as' => 'admin.artisans.show',
+        'uses' => 'ArtisansController@show'
     ]);
     Route::delete('admin/artisans/{artisan}', [
         'as' => 'admin.artisans.destroy',

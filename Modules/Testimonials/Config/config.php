@@ -6,8 +6,8 @@ return [
 		'id' => 'asc',
 	],
 	'sidebar' => [
-		'weight' => 2,
-		'icon' => 'fa fa-file',
+		'weight' => 90,
+		'icon' => 'fa fa-comment',
 	],
 	'th' => ['name','body','status'],
 	'columns'=>[

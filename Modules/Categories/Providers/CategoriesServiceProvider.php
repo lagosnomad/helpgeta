@@ -6,8 +6,10 @@ use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
 use Modules\Categories\Entities\Category;
+use Modules\Categories\Observers\UriObserver;
 use Modules\Categories\Repositories\EloquentCategory;
 use Modules\Core\Observers\FileObserver;
+use Modules\Categories\Observers\SlugObserver;
 
 class CategoriesServiceProvider extends ServiceProvider
 {
@@ -37,6 +39,8 @@ class CategoriesServiceProvider extends ServiceProvider
         );
 
         Category::observe(new FileObserver());
+        Category::observe(new SlugObserver());
+        Category::observe(new UriObserver());
 
     }
 

@@ -16,7 +16,7 @@ class StatesController extends BaseAdminController {
     {
         $module = $this->repository->getTable();
         $title = trans($module . '::global.group_name');
-        return view($module.'::admin.index')
+        return view('core::admin.index')
             ->with(compact('title', 'module'));
     }
 

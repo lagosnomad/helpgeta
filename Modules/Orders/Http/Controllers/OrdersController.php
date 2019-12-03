@@ -4,6 +4,7 @@ use Modules\Core\Http\Controllers\BaseAdminController;
 use Modules\Orders\Http\Requests\FormRequest;
 use Modules\Orders\Repositories\OrderInterface as Repository;
 use Modules\Orders\Entities\Order;
+use Yajra\DataTables\Facades\DataTables;
 
 class OrdersController extends BaseAdminController {
 
@@ -61,6 +62,27 @@ class OrdersController extends BaseAdminController {
         $model = $this->repository->update($data);
 
         return $this->redirect($request, $model, trans('core::global.update_record'));
+    }
+
+    public function show($model)
+    {
+        return view('orders::admin.show')->with(compact('model'));
+    }
+
+    public function dataTable($artisan_user_id = NULL)
+    {
+        $model = $this->repository->getDatatable($artisan_user_id);
+
+        $model_table = $this->repository->getTable();
+
+        return Datatables::of($model)
+            ->addColumn('status_name', function ($row) {
+                return order_status_label($row->status_name,$row->status_class);
+            })
+            ->addColumn('action', $model_table . '::admin._table-action')
+            ->escapeColumns(['action'])
+            ->removeColumn('id')
+            ->make(true);
     }
 
 }

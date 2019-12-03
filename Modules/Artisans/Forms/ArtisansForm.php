@@ -20,7 +20,7 @@ class ArtisansForm extends Form {
                 'label' => 'Bank Name'
             ])
             ->add('account_number', 'text', [
-                'label' => 'account_number'
+                'label' => 'Account Number'
             ])
             ->add('account_name', 'text', [
                 'label' => 'Account Name'
@@ -36,6 +36,24 @@ class ArtisansForm extends Form {
             ])
             ->add('image', 'file', [
                 'label' => 'Logo'
+            ])
+            ->add('is_activated', 'choice', [
+                'label'=>'Activate Service Provider',
+                'choices' => [
+                    0 => 'No',
+                    1 => 'Yes'
+                ],
+                'expanded' => true,
+                'multiple' => false
+            ])
+            ->add('is_verified', 'choice', [
+                'label'=>'Verify Service Provider',
+                'choices' => [
+                    0 => 'No',
+                    1 => 'Yes'
+                ],
+                'expanded' => true,
+                'multiple' => false
             ]);
 
     }

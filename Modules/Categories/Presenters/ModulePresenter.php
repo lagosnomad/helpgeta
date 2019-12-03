@@ -17,7 +17,7 @@ class ModulePresenter  extends Presenter
 
     public function url()
     {
-        return route('categories.show',['slug'=>$this->entity->slug]);
+        return route('categories.show',['uri'=>$this->entity->uri,'sort'=>'rating']);
     }
 
     public function imgNotFound($file = 'uploads/category.png')

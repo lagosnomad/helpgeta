@@ -1,0 +1,17 @@
+{
+    "name": "Banks",
+    "alias": "banks",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Banks\\Providers\\BanksServiceProvider",
+        "Modules\\Banks\\Providers\\RouteServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}

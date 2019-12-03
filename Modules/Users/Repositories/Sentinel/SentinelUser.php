@@ -213,6 +213,7 @@ class SentinelUser implements UserInterface
             'id',
             'first_name',
             'last_name',
+            'username',
             'email',
             'created_at'
         ]);
@@ -224,5 +225,16 @@ class SentinelUser implements UserInterface
         $model = config('auth.providers.users.model');
         //dd($model);
         return $model::count();
+    }
+
+    public function getCountForPeriod($start_date,$end_date,$group = NULL){
+        $model = $this->user;
+        $query = $model;
+        if(!is_null($group)){
+            $query = $query->whereHas('roles',function($query) use($group){
+                return $query->where('slug',$group);
+            });
+        }
+        return $query->whereBetween('created_at',[$start_date,$end_date])->count();
     }
 }

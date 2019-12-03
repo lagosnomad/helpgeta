@@ -1,28 +1,57 @@
 
-.artisan-single-wrapper{
-  .artisan-detail-box{
-    .artisan-detail-box-item{
-      margin-bottom: 1.5rem;
-      .title{
-        margin-bottom: 0.4rem;
-        font-size:$size-6;
-        font-weight:600;
-        text-transform: uppercase;
-        .icon{
-          display:inline-block;
-          vertical-align:middle;
-          color:$theme-color;
-          i{
-            font-size:$size-5;
+.artisan-single-wrapper {
+  .page-heading {
+    .media {
+      @include mobile {
+        display: block;
+        .media-left{
+          margin-right: 0;
+          figure{
+            margin-right: auto;
+            margin-left: auto;
+            margin-bottom: 1rem;
           }
         }
-        span:not(.icon){
-          display:inline-block;
-          vertical-align:middle;
+        .media-content{
+          text-align: center;
+          .level-item{
+            margin-bottom:0 !important;
+          }
+        }
+        .media-right{
+          margin-left: 0;
+          margin-top:1rem;
+          .button{
+            width: 100%;
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+  .artisan-detail-box {
+    .artisan-detail-box-item {
+      margin-bottom: 1.5rem;
+      .title {
+        margin-bottom: 0.4rem;
+        font-size: $size-6;
+        font-weight: 600;
+        text-transform: uppercase;
+        .icon {
+          display: inline-block;
+          vertical-align: middle;
+          color: $theme-color;
+          i {
+            font-size: $size-5;
+          }
+        }
+        span:not(.icon) {
+          display: inline-block;
+          vertical-align: middle;
           margin-left: 0.9rem;
         }
       }
-      .content{
+      .content {
         margin-left: 2.5rem;
       }
     }

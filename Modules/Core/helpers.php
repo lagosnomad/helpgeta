@@ -16,7 +16,7 @@ function generate_datatable($table_headings){
 function get_pages()
 {
     $model = app('Modules\Pages\Repositories\PageInterface');
-    return $model->select('all', false,'title','id')->toArray();
+    return $model->select('all', false,'title','id');
 }
 
 function get_post_categories()
@@ -46,6 +46,7 @@ function edit_btn($route=''){
             </a>';
 }
 
+
 function single_btn($route='',$text=false){
     $text = ($text) ? $text : '';
     return '<a class="btn btn-success btn-xs tooltips" href="'.$route.'" data-placement="top" data-original-title="View Details">
@@ -57,6 +58,7 @@ function ajax_edit_btn($route=''){
                     <i class="fa fa-pencil"></i>
                 </a>';
 }
+
 
 function download_btn($route){
     return '<a class="btn btn-warning btn-xs" href="'.$route.'">
@@ -172,6 +174,7 @@ function status_label($status){
         return '<label class="label label-danger">Inactive</label>';
     }
 }
+
 
 function payment_status_label($status){
     if($status ==1){

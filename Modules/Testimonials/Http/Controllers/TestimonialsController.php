@@ -4,6 +4,7 @@ use Modules\Core\Http\Controllers\BaseAdminController;
 use Modules\Testimonials\Http\Requests\FormRequest;
 use Modules\Testimonials\Repositories\TestimonialInterface as Repository;
 use Modules\Testimonials\Entities\Testimonial;
+use Yajra\DataTables\Facades\DataTables;
 
 class TestimonialsController extends BaseAdminController {
 
@@ -16,7 +17,7 @@ class TestimonialsController extends BaseAdminController {
     {
         $module = $this->repository->getTable();
         $title = trans($module . '::global.group_name');
-        return view($module.'::admin.index')
+        return view('core::admin.index')
             ->with(compact('title', 'module'));
     }
 
@@ -62,5 +63,22 @@ class TestimonialsController extends BaseAdminController {
 
         return $this->redirect($request, $model, trans('core::global.update_record'));
     }
+
+    public function dataTable()
+    {
+        $model = $this->repository->getForDatatable();
+
+        $model_table = $this->repository->getTable();
+
+        return Datatables::of($model)
+            ->editColumn('status', function($row){
+                return status_label($row->status);
+            })
+            ->addColumn('action', $model_table . '::admin._table-action')
+            ->escapeColumns(['action'])
+            ->removeColumn('id')
+            ->make();
+    }
+
 
 }

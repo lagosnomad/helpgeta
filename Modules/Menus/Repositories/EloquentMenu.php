@@ -1,5 +1,6 @@
 <?php namespace Modules\Menus\Repositories;
 
+use Exception;
 use Illuminate\Database\Eloquent\Model;
 use Modules\Core\Collections\NestableCollection;
 use Modules\Core\Repositories\RepositoriesAbstract;
@@ -35,18 +36,13 @@ class EloquentMenu extends RepositoriesAbstract implements MenuInterface
      */
     public function getMenu($slug)
     {
-        try {
-            $menu = $this->all(['menu_links'])->filter(function (Menu $menu) use ($slug) {
-                return $menu->slug == $slug;
-            })->first();
-            $menu->menu_links = $this->prepare($menu->menu_links);
-            $menu->menu_links->nest();
-        } catch (Exception $e) {
-            Log::info('No menu found with name �'.$slug.'�');
+        $menu = $this->bySlug($slug,['menu_links']);
 
+        if(is_null($menu)){
             return;
         }
-
+        $menu->menu_links = $this->prepare($menu->menu_links);
+        $menu->menu_links->nest();
         return $menu;
     }
 

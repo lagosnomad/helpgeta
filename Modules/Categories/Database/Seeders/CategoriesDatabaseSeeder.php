@@ -5,6 +5,7 @@ namespace Modules\Categories\Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 use DB;
+use Modules\Categories\Entities\Category;
 
 class CategoriesDatabaseSeeder extends Seeder {
 
@@ -745,7 +746,10 @@ gown (Ankara/casual material), skirt(Ankara/casual material)',
 
         ];
 
-        DB::table('categories')->insert($categories);
+        //DB::table('categories')->insert($categories);
+        foreach($categories as $category){
+            Category::create($category);
+        }
 
     }
 }

@@ -15,7 +15,7 @@ Route::group(['prefix' => 'testimonials'], function () {
         'as' => 'admin.testimonials.create',
         'uses' => 'TestimonialsController@create'
     ]);
-    Route::get('{$SINGULAR_LOWER_NAME$}/edit', [
+    Route::get('{testimonial}/edit', [
         'as' => 'admin.testimonials.edit',
         'uses' => 'TestimonialsController@edit'
     ]);
@@ -23,7 +23,7 @@ Route::group(['prefix' => 'testimonials'], function () {
         'as' => 'admin.testimonials.store',
         'uses' => 'TestimonialsController@store'
     ]);
-    Route::put('{$SINGULAR_LOWER_NAME$}', [
+    Route::put('{testimonial}', [
         'as' => 'admin.testimonials.update',
         'uses' => 'TestimonialsController@update'
     ]);
@@ -31,7 +31,7 @@ Route::group(['prefix' => 'testimonials'], function () {
         'as' => 'admin.testimonials.datatable',
         'uses' => 'TestimonialsController@dataTable'
     ]);
-    Route::delete('{$SINGULAR_LOWER_NAME$}', [
+    Route::delete('{testimonial}', [
         'as' => 'admin.testimonials.destroy',
         'uses' => 'TestimonialsController@destroy'
     ]);

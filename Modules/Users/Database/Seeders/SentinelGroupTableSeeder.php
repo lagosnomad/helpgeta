@@ -36,8 +36,8 @@ class SentinelGroupTableSeeder extends Seeder
         // Create an Vendors group
         $groups->createModel()->create(
             [
-                'name' => 'Vendor',
-                'slug' => 'vendor',
+                'name' => 'Artisan',
+                'slug' => 'artisan',
             ]
         );
 

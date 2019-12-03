@@ -16,7 +16,9 @@ class AddFieldsToUsersTable extends Migration {
         {
 			$table->string('phone')->nullable();
 			$table->text('address')->nullable();
-
+            $table->string('avatar')->nullable();
+            $table->integer('state_id')->nullable();
+            $table->integer('city_id')->nullable();
         });
     }
 
@@ -31,6 +33,9 @@ class AddFieldsToUsersTable extends Migration {
         {
 			$table->dropColumn('phone');
 			$table->dropColumn('address');
+			$table->dropColumn('avatar');
+			$table->dropColumn('state_id');
+			$table->dropColumn('city_id');
 
         });
     }

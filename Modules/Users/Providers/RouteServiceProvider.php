@@ -38,6 +38,9 @@ class RouteServiceProvider extends ServiceProvider
     public function map()
     {
         Route::group(['namespace' => $this->namespace], function () {
+
+            Route::get('register/service-provider', ['middleware' => 'web', 'as' => 'register.artisan', 'uses' => 'UsersPublicController@getArtisanRegister']);
+
             Route::group(['prefix' => 'account','middleware'=>config('myapp.middleware.account')], function ()
             {
                 Route::get('profile', ['as' => 'profile.index', 'uses' => 'UsersAccountController@index']);
@@ -51,7 +54,7 @@ class RouteServiceProvider extends ServiceProvider
                 Route::get('login', ['middleware' => 'web', 'as' => 'login', 'uses' => 'AuthController@getLogin']);
                 Route::post('login', ['as' => 'login.post', 'uses' => 'AuthController@postLogin']);
                 # Register
-                Route::get('register', ['middleware' => 'web', 'as' => 'register', 'uses' => 'AuthController@getRegister']);
+
                 Route::post('register', ['as' => 'register.post', 'uses' => 'AuthController@postRegister']);
 
                 // facebook login

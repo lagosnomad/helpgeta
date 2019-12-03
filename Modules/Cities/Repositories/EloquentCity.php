@@ -11,4 +11,18 @@ class EloquentCity extends RepositoriesAbstract implements CityInterface
         $this->model = $model;
     }
 
+    public function getForDataTable()
+    {
+        $query = $this->model
+            ->leftJoin('states', 'states.id', '=', 'state_id')
+            ->select([
+                'cities.id',
+                'cities.name',
+                'states.name as state_name'
+            ]);
+
+        return $query;
+    }
+
+
 }

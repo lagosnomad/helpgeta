@@ -38,8 +38,8 @@ class TestimonialsServiceProvider extends ServiceProvider
             'Modules\Testimonials\Facades\Facade'
         );
 
-        /*Testimonial::observe(new SlugObserver());
-        Testimonial::observe(new FileObserver());*/
+        /*Testimonial::observe(new SlugObserver());*/
+        Testimonial::observe(new FileObserver());
 
     }
 

@@ -20,6 +20,7 @@ class SentinelUserTableSeeder extends Seeder
         $user = Sentinel::create(
             [
                 'email' => 'test@admin.com',
+                'username' => 'admin',
                 'password' => 'admin',
                 'first_name' => 'Digital',
                 'last_name' => 'Edge',

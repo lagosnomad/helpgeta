@@ -1,4 +1,4 @@
-<ul class="account-list">
+<ul>
     @foreach($groups as $group)
         {!! $group !!}
     @endforeach

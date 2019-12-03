@@ -1,0 +1,17 @@
+{
+    "name": "Identifications",
+    "alias": "identifications",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Identifications\\Providers\\RouteServiceProvider",
+        "Modules\\Identifications\\Providers\\IdentificationsServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}

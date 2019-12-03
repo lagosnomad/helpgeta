@@ -1,6 +1,4 @@
-@if(has_access('states.edit'))
-    {!! edit_btn(route('admin.states.show',$id)) !!}
-@endif
+
 @if(has_access('states.edit'))
     {!! edit_btn(route('admin.states.edit',$id)) !!}
 @endif

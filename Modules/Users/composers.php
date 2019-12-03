@@ -28,7 +28,7 @@ view()->composer(
         'core::public.account-master',
         'core::public._partials.top',
         'dashboard::public.index',
-        'bookings::public.show',
+        'orders::public.show',
     ],
     'Modules\Users\Composers\UsernameViewComposer'
 );

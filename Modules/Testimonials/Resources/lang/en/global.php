@@ -1,11 +1,11 @@
 <?php
 return array(
     'group_name'=>'Testimonials',
-    'name'=>'testimonials',
+    'name'=>'Testimonials',
     'group_description'=>'use this section to manage all testimonials e.t.c',
     'index' => 'list of all testimonials',
-    'pages' => '$SINGULAR_LOWER_NAME$|testimonials',
-    'new'  => 'New $SINGULAR_STUDLY_NAME$',
-    'edit' => 'Edit $SINGULAR_STUDLY_NAME$',
+    'pages' => 'testimonial|testimonials',
+    'new'  => 'New Testimonial',
+    'edit' => 'Edit Testimonial',
     'back' => 'Back to testimonials',
 );

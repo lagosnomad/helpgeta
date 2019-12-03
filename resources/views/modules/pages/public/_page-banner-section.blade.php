@@ -11,5 +11,5 @@
 @include('pages::public._page-breadcrumbs')
 
 <div class="page-heading">
-    <h2 class="title is-3 is-spaced">{!! $page->title !!}</h2>
+    <h1 class="title is-3 is-spaced">{!! $page->title !!}</h1>
 </div>

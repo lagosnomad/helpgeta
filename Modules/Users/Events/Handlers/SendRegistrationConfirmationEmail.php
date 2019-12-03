@@ -3,6 +3,7 @@
 use Illuminate\Mail\Mailer;
 use Illuminate\Mail\Message;
 use Illuminate\Support\Facades\Mail;
+use Modules\Users\Emails\OrderRequested;
 use Modules\Users\Emails\WelcomeEmail;
 use Modules\Users\Events\UserHasRegistered;
 use Modules\Users\Repositories\AuthenticationInterface;

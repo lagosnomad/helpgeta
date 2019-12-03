@@ -9,11 +9,12 @@ return [
         'weight' => 20,
         'icon'   => 'fa fa-cog',
     ],
-    'th'          => ['Service Name','Parent Service','amount','is_hourly_based','status'],
+    'th'          => ['Service Name','Parent Service','Uri','is_hourly_based','status'],
     'columns'     => [
         ['data' => 'category', 'name' => 'category'],
         ['data' => 'parent_title', 'name' => 'parent_id'],
-        ['data' => 'amount', 'name' => 'amount'],
+        ['data' => 'uri', 'name' => 'uri'],
+        /*['data' => 'amount', 'name' => 'amount'],*/
         ['data' => 'is_hourly_based', 'name' => 'is_hourly_based'],
         ['data' => 'status', 'name' => 'status'],
         ['data' => 'action', 'name' => 'action'],

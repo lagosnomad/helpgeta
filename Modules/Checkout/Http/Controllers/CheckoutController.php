@@ -35,12 +35,13 @@ class CheckoutController extends Controller {
         $artisan_id  = request()->get('artisan_id');
         $category_id = request()->get('category_id');
 
-        $artisan = \Artisans::byId($artisan_id,['user','categories']);
-        $artisan = single_artisan_collection($artisan);
+        $artisan_model = \Artisans::bySlug($artisan_id,['user','categories']);
+        $artisan = single_artisan_collection($artisan_model);
 
-        $category = \Categories::byIdWithChildrenNested($category_id)->toJson();
+        $category = $artisan_model->categories()->where('uri',$category_id)->where('artisan_category.amount','!=',0.00)->first();
+        $category = !is_null($category) ? $category : $artisan_model->categories()->where('artisan_category.amount','>',0)->first();
 
-        $data = ['artisan'=>$artisan,'category'=>$category];
+        $data = ['artisan'=>$artisan,'ref_category'=>$category];
 
         request()->session()->put('checkout_data', $data);
 

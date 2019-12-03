@@ -20,12 +20,12 @@ class CategoriesForm extends Form {
                 'wrapper' => ['class' => 'form-group'],
                 'label'       => 'Parent Service',
                 'empty_value' => '-- select parent --',
-                'choices'     => \Categories::select('all', false, 'category', 'id')->toArray()
+                'choices'     => \Categories::select('all', false, 'category', 'id')
             ])
             ->add('is_hourly_based', 'choice', [
                 'label' => 'Is Service Hourly Based ?',
                 'choices' => [1 => 'Yes', 0 => 'No'],
-                'wrapper' => ['class' => 'form-group toggle-parent-input'],
+                'wrapper' => ['class' => 'form-group'],
                 'choice_options' => [
                     'wrapper' => ['class' => 'is-hourly-based-wrapper'],
                     'label_attr' => ['class' => 'label-class'],
@@ -38,22 +38,22 @@ class CategoriesForm extends Form {
 
             /*->add('is_hourly_based', 'select', [
                 'choices' => [1 => 'Yes', 0 => 'No'],
-                'attr' => ['class'=>'form-control toggle-parent-input'],
+                'attr' => ['class'=>'form-control'],
                 'selected'=>0,
                 'wrapper' => ['class' => 'form-group'],
             ])*/
 
-            ->add('amount', 'number',[
+            /*->add('amount', 'number',[
                 'label'=>'Amount',
                 'help_block' => [
                     'text' => 'Optional for services with sub services',
                     'tag' => 'p',
                     'attr' => ['class' => 'help-block']
                 ]
-            ])
+            ])*/
             ->add('body', 'textarea',[
                 'label'=>'Description',
-                'wrapper' => ['class' => 'form-group toggle-parent-input'],
+                'wrapper' => ['class' => 'form-group'],
                 'attr'=>['rows'=>3]
             ])
             ->add('status', 'select', [

@@ -13,7 +13,7 @@
                 <h2 class="title is-3 is-spaced">Work With Help Geta </h2>
                 <h3 class="subtitle is-5">Got amazing skills? Well we’ve got amazing employers looking to hire you , join
                     our family and let’s turn your little hobby into big bucks.</h3>
-                <a href="{{url('register').'?type=provider'}}" class="button is-medium">Get Started</a>
+                <a href="{{route('register.artisan')}}" class="button is-medium">Get Started</a>
             </div>
         </div>
     </div>

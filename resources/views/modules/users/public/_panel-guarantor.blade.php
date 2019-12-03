@@ -1,8 +1,8 @@
-<div class="panel">
-    <div class="panel-heading">
-        Guarantor Information
-    </div>
-    <div class="panel-body">
+<div class="form-widget">
+    <aside>
+        <p class="title">Guarantor Info</p>
+    </aside>
+    <div class="form-widget-content">
         <div class="columns">
             <div class="column is-6">
                 <div class="field">

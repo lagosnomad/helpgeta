@@ -1,14 +1,11 @@
 <template>
-	<div>
 		<a href="#"
-		   v-if="categoryId"
 		   class="button is-primary"
 		   @click.prevent="makeRequest(artisanId,categoryId)"
 		   :class="[{'is-loading' : isLoading},size]"
 		   :disabled="isLoading">
 			Request Service
 		</a>
-	</div>
 </template>
 
 <script type="text/babel">

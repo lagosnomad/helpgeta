@@ -46,7 +46,7 @@
                             spaceBetween: 5,
                         },
                         640: {
-                            slidesPerView: 2,
+                            slidesPerView: 1,
                             spaceBetween: 5,
                         },
                         320: {

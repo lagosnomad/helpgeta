@@ -7,34 +7,23 @@
 
 @section('main')
 
-    <main id="page-main" class="artisan-single-wrapper">
-        <div class="page-side-bg"></div>
+    <section class="section checkout-wrapper">
         <div class="container">
-            <div class="page-main-container">
-                <div class="page-lead">
 
-                    <nav class="breadcrumb has-bullet-separator" aria-label="breadcrumbs">
-                        <ul>
-                            <li><a href="#">Home</a></li>
-                            <li class="is-active"><a href="#" aria-current="page">Make a Request</a></li>
-                        </ul>
-                    </nav>
+            <nav class="breadcrumb has-bullet-separator" aria-label="breadcrumbs">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li class="is-active"><a href="#" aria-current="page">Make a Request</a></li>
+                </ul>
+            </nav>
 
-                    <div class="page-heading">
-                        <h2 class="title is-3 is-spaced">Make a Request</h2>
-                    </div>
-
-                    <checkout-request :artisan="{{$artisan}}" :category="{{$category}}"></checkout-request>
-
-
-                </div>
-                <div class="page-side">
-                    @include('pages::public._widget-categories')
-                    @include('pages::public._widget-contact')
-                    @include('pages::public._widget-newsletter')
-                </div>
+            <div class="page-heading">
+                <h1 class="title is-3 is-spaced">Make a Request</h1>
             </div>
+
+            <checkout-request :artisan="{{$artisan}}" :ref-category="{{$ref_category}}" :user="{{current_user()}}"></checkout-request>
+
         </div>
-    </main>
+    </section>
 
 @stop

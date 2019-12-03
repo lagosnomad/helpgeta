@@ -5,3 +5,9 @@
         @endforeach
     @endif
 @endif
+<a href="{{route('categories')}}" class="navbar-item">
+    Browse Services
+</a>
+<a href="{{route('register.artisan')}}" class="navbar-item has-text-primary">
+    Become a Service Provider
+</a>
